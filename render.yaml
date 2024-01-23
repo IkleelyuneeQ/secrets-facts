@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: secrets
+    env:
+      - key: DATABASE_URL
+        value: postgres://facts_secrets_user:VvFWaDhT8ZVhae5JQAwmcFtvRRconbAC@dpg-cmo4gida73kc73b44eg0-a/facts_secrets
