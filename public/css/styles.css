@@ -1,0 +1,68 @@
+
+body {
+  background-color: #E8ECEF;
+}
+
+.centered {
+    padding-top: 200px;
+    text-align: center;
+}
+
+.secret-text {
+  padding: 32px;
+  text-align: center;
+  font-size: 1.8rem;
+  color: #fff;
+  background-color: #000;
+
+}
+
+.containered {
+  width: 100%;
+  max-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.secret-text-prgh {
+  padding: 32px;
+  min-width: 50%;
+  max-height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000; 
+}
+
+.myParagraph {
+  text-align: left;
+  font-size: 1.6rem;
+  color: #fff;
+  /* background-color: #000; */
+}
+
+@media only screen and (max-width: 768px) {
+  .display-3 {
+    font-size: 2.5rem;
+  }
+
+  .myParagraph {
+    font-size: 2rem;
+  }
+
+  .secret-text {
+    font-size: 2rem;
+  }
+
+  .containered {
+    max-height: 80vh
+  }
+
+  .secret-text-prgh {
+    max-height: 60vh
+  }
+  
+}
+
