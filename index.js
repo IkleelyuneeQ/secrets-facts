@@ -79,11 +79,11 @@ app.get("/secrets", async(req, res) => {
                 secretCard: formattedSecrets,});} 
           else {
               res.render("secrets.ejs", {secret: "A person who looks good from behind is called Talikodgenic. #Madfacts",  
-                                         secretCard: "Share a fact/secret, to view some facts/secrets here 😎",});}}
+                                         secretCard: "Share a fact/secret to view some facts/secrets here 😎",});}}
        else {
          res.render("secrets.ejs", {
          secret: "A person who looks good from behind is called Talikodgenic. #Madfacts.",
-         secretCard: "Share a fact/secret, to view some facts/secrets here😎", });}} 
+         secretCard: "Share a fact/secret to view some facts/secrets here😎", });}} 
     catch (err){
       console.log(err);}} 
  else {
