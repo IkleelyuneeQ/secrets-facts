@@ -9,6 +9,7 @@ body {
 }
 
 .secret-text {
+  margin-top: 20px;
   padding: 32px;
   text-align: center;
   font-size: 1.8rem;
@@ -41,6 +42,14 @@ body {
   font-size: 1.6rem;
   color: #fff;
   /* background-color: #000; */
+}
+
+.btn-lg {
+  margin-left: 16px;
+}
+
+.col-sm-4 {
+  margin-top: 20px;
 }
 
 @media only screen and (max-width: 768px) {
