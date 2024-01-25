@@ -65,38 +65,30 @@ app.get("/secrets", async(req, res) => {
       const sekrets = await db.query("SELECT secrets FROM users");
       const allSekrets = sekrets.rows;
 
-      if (allSekrets.length > 0) {
-      const randomSeKret = allSekrets[Math.floor(Math.random() * allSekrets.length)].secrets;
-      const formattedSecrets = randomSeKret.map(secret => `• ${secret}`).join(" ");
+       if(allSekrets.length > 0) {
+         const randomSeKret = allSekrets[Math.floor(Math.random() * allSekrets.length)].secrets;
+         const formattedSecrets = randomSeKret.map(secret => `• ${secret}`).join(" ");
 
-     const storedSecret = await db.query("SELECT secrets FROM users WHERE email = $1",
-     [req.user.email]);
-     if (storedSecret.rows[0] && storedSecret.rows[0].secrets) {
-     const userSecretArr = storedSecret.rows[0].secrets;
-     const lastUserSecret = userSecretArr[userSecretArr.length - 1];
-      res.render("secrets.ejs", {
-        secret: lastUserSecret,
-        secretCard: formattedSecrets,
-      });
-     } else {
-      res.render("secrets.ejs", {secret: "A person who looks good from behind is called Talikodgenic. #Madfacts",  secretCard: randomSeKret,});
-     }
-     }
-      else {
-    res.render("secrets.ejs", {
-      secret: "A person who looks good from behind is called Talikodgenic. #Madfacts.",
-      secretCard: "",  
-    });
-     }
-    } catch (err){
-      console.log(err);
-    }
-   
-   
-  } else {
+         const storedSecret = await db.query("SELECT secrets FROM users WHERE email = $1",
+         [req.user.email]);
+          if (storedSecret.rows[0] && storedSecret.rows[0].secrets) {
+              const userSecretArr = storedSecret.rows[0].secrets;
+              const lastUserSecret = userSecretArr[userSecretArr.length - 1];
+                res.render("secrets.ejs", {
+                secret: lastUserSecret,
+                secretCard: formattedSecrets,});} 
+          else {
+              res.render("secrets.ejs", {secret: "A person who looks good from behind is called Talikodgenic. #Madfacts",  
+                                         secretCard: "",});}}
+       else {
+         res.render("secrets.ejs", {
+         secret: "A person who looks good from behind is called Talikodgenic. #Madfacts.",
+         secretCard: "", });}} 
+    catch (err){
+      console.log(err);}} 
+ else {
     res.redirect("/login");
-  }
-});
+  } });
 
 app.get("/submit", (req, res) => {
   if(req.isAuthenticated()){
