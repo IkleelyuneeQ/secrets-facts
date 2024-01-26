@@ -10,9 +10,9 @@
         $(document).ready(function () {
     // Select the form and input fields
     const form = $('#registerForm');
-    const emailInput = $('.emailInput');
-    const passwordInput = $('.passwordInput');
-    const registerButton = $('.registerButton');
+    const emailInput = $('#emailInput');
+    const passwordInput = $('#passwordInput');
+    const registerButton = $('#registerButton');
 
     // Function to check if both email and password inputs are filled
     function checkInputs() {
@@ -24,6 +24,25 @@
     // Bind the checkInputs function to input events
     emailInput.on('input', checkInputs);
     passwordInput.on('input', checkInputs);
+  });
+
+  $(document).ready(function () {
+    // Select the form and input fields
+    const form = $('#registerForm');
+    const emailInputL = $('#emailInputL');
+    const passwordInputL = $('#passwordInputL');
+    const registerButtonL = $('#registerButtonL');
+
+    // Function to check if both email and password inputs are filled
+    function checkInputsL() {
+      const emailFilled = emailInputL.val().trim() !== '';
+      const passwordFilled = passwordInputL.val().trim() !== '';
+      registerButtonL.prop('disabled', !(emailFilled && passwordFilled));
+    }
+
+    // Bind the checkInputs function to input events
+    emailInputL.on('input', checkInputsL);
+    passwordInputL.on('input', checkInputsL);
   });
     </script>
 </html>

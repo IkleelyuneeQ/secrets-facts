@@ -43,7 +43,13 @@ body {
   color: #fff;
 }
 
-  .registerButton:disabled {
+  #registerButton:disabled {
+    opacity: 0.5; 
+    cursor: not-allowed; 
+    transition: background-color 0.3s ease;
+  }
+
+  #registerButtonL:disabled {
     opacity: 0.5; 
     cursor: not-allowed; 
     transition: background-color 0.3s ease;
@@ -57,7 +63,7 @@ body {
   margin-top: 20px;
   padding-left: 0px;
   padding-right: 0px;
-  width: 100%;
+  max-width: 100%;
 }
 
 .btn-darkw{
